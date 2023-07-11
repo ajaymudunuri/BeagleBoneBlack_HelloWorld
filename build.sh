@@ -1,14 +1,14 @@
 #! /usr/bin/bash
 
-buildCommand="arm-linux-gnueabihf-gcc"
+buildCommand="arm-linux-gnueabihf-g++"
 outputFileName="hello_beagle_bone"
-sourceFileName="hello_beagle_bone.c"
+sourceFileName="hello_beagle_bone.cpp"
 objectFilePath="output/obj"
 
 echo "Starting build script from directory : "
 pwd
 echo "Found the following C source files in the directory..."
-ls *.c
+ls *.cpp
 
 mkdir -p $objectFilePath
 

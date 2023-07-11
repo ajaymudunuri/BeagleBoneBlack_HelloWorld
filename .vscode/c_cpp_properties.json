@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/c++/11/**",
+                "/usr/include/c++/11/bits/**",
+                "/home/ajaymudunuri/beaglebone/gcc-linaro-6.5.0-2018.12-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/include/c++/6.5.0/arm-linux-gnueabihf"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "compilerPath": "/home/ajaymudunuri/beaglebone/gcc-linaro-6.5.0-2018.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++",
+            "intelliSenseMode": "gcc-arm"
+        },
+        {
+            "name": "BeagleBone",
+            "includePath": [
+                "/home/ajaymudunuri/Projects/001_HelloBeagleBone/BeagleBoneBlack_HelloWorld/**",
+                "/usr/include/c++/11/**",
+                "/usr/include/c++/11/bits/**"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "gcc-arm",
+            "mergeConfigurations": false,
+            "compilerPath": "/home/ajaymudunuri/beaglebone/gcc-linaro-6.5.0-2018.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "compilerPathInCppPropertiesJson": "/home/ajaymudunuri/beaglebone/gcc-linaro-6.5.0-2018.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++"
+        }
+    ],
+    "version": 4
+}
