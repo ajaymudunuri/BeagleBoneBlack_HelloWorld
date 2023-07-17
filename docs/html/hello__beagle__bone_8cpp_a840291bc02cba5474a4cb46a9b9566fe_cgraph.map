@@ -1,0 +1,5 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="Main function for hello world program in beagle bone black." alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node2" href="$hello__beagle__bone_8cpp.html#ae0c907400714299b388585f9561326bf" title="Function used to add date stamp to the console output." alt="" coords="130,5,207,32"/>
+<area shape="rect" id="node3" href="$hello__beagle__bone_8cpp.html#abe8255eeb412ceadb5b813a449cd7273" title="Function used to add time stamp to the console output." alt="" coords="108,56,229,83"/>
+</map>
