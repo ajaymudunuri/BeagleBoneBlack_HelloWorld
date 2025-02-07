@@ -1,0 +1,42 @@
+Follow these steps to update (or reset) the debian image in Beagle Bone Black
+
+1. Download the BeagleBone OS image you want to use.
+2. Use the Etcher utility to burn the BeagleBone image you want to use on the micro sd card you plan on using.
+3. Make sure you don’t have the micro sd card plugged into your board.
+4. Boot the board
+5. Connect to the board via serial or ssh so that your on the command prompt.
+6. Plug the micro sd card into the board.
+7. Type dmesg in the terminal window
+8. The last line from the output should say something like (the numbering may differ slightly):
+   "[ 2805.442940]  mmcblk0: p1"
+   You want to take the above and combine it together by removing the : and space. For the above example it will change to “mmcblk0p1”
+   In the terminal window enter the following commands:
+      mkdir sd_tmp
+      sudo mount /dev/mmcblk0p1 sd_tmp
+      sudo su
+      echo "cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh" >> sd_tmp/boot/uEnv.txt
+      exit
+      sudo umount sd_tmp
+9. Now power off your board
+10. Hold the update button labeled SD (the one by itself) to boot off the sdcard.
+11. Restart (RST button) or power up (while still pushing SD button).
+
+Alternatively, if this doesn't work, manually edit the file as shown below:
+
+To set up the standalone microSD image to automatically flash the eMMC on powerup. Login as debian (password = temppwd) and edit /boot/uEnv.txt with nano (sudo nano /boot/uEnv.txt) or your preferred editor.
+
+In /boot/uEnv.txt:
+  ##enable BBB: eMMC Flasher:
+  #cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
+
+Change to:
+  ##enable BBB: eMMC Flasher:
+  cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
+
+and reboot the system, it'll flash the eMMC on the next bootup. (make sure to remove the microSD after flashing is complete, otherwise it'll just keep on re-flashing the eMMC) 
+
+
+
+Links:
+https://docs.beagleboard.org/boards/beaglebone/blue/flashing-firmware.html
+https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Flashing_eMMC
